@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阳阳的旋转木马</title>
+    <style>
+        video {
+            width: 200px;
+            height: 200px;
+        }
+
+        body {
+            height: 2000px;
+            perspective: 600px;
+
+        }
+
+        section {
+            width: 300px;
+            height: 300px;
+            margin: 300px auto;
+            position: sticky;
+            top: 40%;
+            transform-style: preserve-3d;
+            animation: muma 10s linear infinite;
+
+        }
+
+
+        div {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+
+        }
+
+        div img {
+            width: 100%;
+            height: 100%;
+        }
+
+        div:nth-child(2) {
+            transform: rotateY(0deg) translateZ(300px);
+        }
+
+        div:nth-child(3) {
+            /* transform: translateZ(-500px) rotateY(180deg); */
+            /* 先旋转后只用设置translateZ即可调整每个面向前的位置 */
+            transform: rotateY(60deg) translateZ(300px);
+        }
+
+        div:nth-child(4) {
+            transform: rotateY(120deg) translateZ(300px);
+        }
+
+        div:nth-child(5) {
+            transform: rotateY(180deg) translateZ(300px);
+        }
+
+        div:nth-child(6) {
+            transform: rotateY(240deg) translateZ(300px);
+        }
+
+        div:nth-child(7) {
+            transform: rotateY(300deg) translateZ(300px);
+        }
+
+
+        @keyframes muma {
+            0% {}
+
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+
+        section:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div><video src="taxue.mp4" loop controls></video></div>
+        <div><img src="img/1.jpg" alt=""></div>
+        <div><img src="img/2.jpg" alt=""></div>
+        <div><img src="img/3.jpg" alt=""></div>
+        <div><img src="img/4.jpg" alt=""></div>
+        <div><img src="img/5.jpg" alt=""></div>
+        <div><img src="img/3.jpg" alt=""></div>
+
+    </section>
+
+</body>
+
+</html>
